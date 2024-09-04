@@ -1,35 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+import App from "./components/App";
+import RootStore from "./store";
+import createApi from "./api";
+import createHttpPlugin from "./plugins/http";
+import storeContext from "./contexts/store";
+async function createApp() {
+  const http = createHttpPlugin("http://faceprog.ru/reactcourseapi");
+  const api = createApi(http);
+  const store = new RootStore(api);
+  await store.catalog.load();
+  await store.cart.load();
+  const app = (
+    <storeContext.Provider value={store}>
+      <App />
+    </storeContext.Provider>
+  );
+  return app;
 }
-
-export default App
+export default createApp;
