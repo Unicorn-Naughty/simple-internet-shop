@@ -13,7 +13,7 @@ function ProductsPage() {
             <h3>{pr.title}</h3>
 
             <div>{pr.price}</div>
-            <Link to={`/product/${pr.id}`}>Read more</Link>
+            <Link to={`/catalog/${pr.id}`}>Read more</Link>
             <hr />
           </div>
         ))}
