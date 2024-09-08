@@ -1,11 +1,11 @@
 function createCartApi(http) {
   return {
     async add(token, id) {
-      return await http.get(`cart/add.php?token=${token}&id=${id}`);
+      return (await http.get(`cart/add.php?token=${token}&id=${id}`)).data;
     },
     async change(token, id, cnt) {
       return (
-        await http.get(`cart/change.php?token=${token}&id=${id}$cnt=${cnt}`)
+        await http.get(`cart/change.php?token=${token}&id=${id}&cnt=${cnt}`)
       ).data;
     },
     async remove(token, id) {

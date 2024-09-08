@@ -31,26 +31,26 @@ class Cart {
     });
   };
 
-  add = async (id) => {
+  add = async (id, pr) => {
     if (!this.inCart(id) && !this.inProccessAct(id)) {
       this.iDiNProccess.push(id);
       let res = await this.rootStore.api.cart.add(this.#token, id);
 
       runInAction(() => {
         if (res) {
-          this.items.push({ id, cnt: 1 });
+          this.items.push({ ...pr, cnt: 1 });
         }
         this.iDiNProccess = this.iDiNProccess.filter((el) => el != id);
       });
     }
   };
 
-  // get itemsDetailed() {
-  //   return this.items.map((item) => {
-  //     let details = this.rootStore.products.getById(item.id);
-  //     return { ...details, ...item };
-  //   });
-  // }
+  get itemsDetailed() {
+    return this.items.map((item) => {
+      let details = this.rootStore.catalog.one(item.id);
+      return { ...details, ...item };
+    });
+  }
 
   get total() {
     return this.itemsDetailed.reduce(

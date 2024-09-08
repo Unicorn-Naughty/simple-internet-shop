@@ -7,8 +7,7 @@ function ProductItem() {
   const { id } = useParams();
   const validId = /^[1-9]+\d*$/.test(id);
   const product = catalog.one(+id);
-  
-  
+
   if (!validId || !product) {
     return <Err404 title={`Product not found`} />;
   }
@@ -31,7 +30,7 @@ function ProductItem() {
           ) : (
             <button
               disabled={cart.inProccessAct(id)}
-              onClick={() => cart.add(id)}
+              onClick={() => cart.add(id, product)}
             >
               Add
             </button>

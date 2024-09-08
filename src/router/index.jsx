@@ -4,6 +4,8 @@ import obsProductsPage from "../pages/productsPage";
 import Home from "../pages/Home";
 import Cart from "../pages/Cart";
 import About from "../pages/About";
+import Order from "../pages/Order";
+import Result from "../pages/Result";
 
 const routes = [
   {
@@ -19,8 +21,16 @@ const routes = [
     Component: Cart,
   },
   {
+    path: "/order",
+    Component: Order,
+  },
+  {
     path: "/about",
     Component: About,
+  },
+  {
+    path: "/result",
+    Component: Result,
   },
   {
     path: "*",
