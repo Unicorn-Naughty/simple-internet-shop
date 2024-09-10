@@ -1,24 +1,22 @@
 import { NavLink } from "react-router-dom";
 import pagesArr from "../router/routesNavBar";
-import "./nav.css";
+
+import { Box, Typography } from "@mui/material";
 function Navbar() {
   return (
-    <nav id="navbar">
-      <ul>
+    <Box display={"flex"} id="navbar">
+      <Box display={"flex"}>
         {pagesArr.map((pageLink) => (
-          <li key={pageLink.name}>
+          <Typography key={pageLink.name}>
             <NavLink
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active" : ""
-              }
-              to={pageLink.path}
+              
             >
-              {pageLink.name}
+              
             </NavLink>
-          </li>
+          </Typography>
         ))}
-      </ul>
-    </nav>
+      </Box>
+    </Box>
   );
 }
 export default Navbar;

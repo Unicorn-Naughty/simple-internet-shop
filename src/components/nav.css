@@ -1,3 +1,12 @@
-#navbar a.active {
-    color: red;
+#navLinks a.active {
+    color: rgb(138, 179, 233);
+  }
+  #navLinks a{
+    color: white;
+    text-decoration: none;
+    transition: all .3s;
+  }
+  #navLinks a:hover{
+    color: rgb(138, 179, 233);
+    text-decoration: none;
   }
