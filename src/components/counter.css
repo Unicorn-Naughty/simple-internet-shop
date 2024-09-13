@@ -1,0 +1,9 @@
+.counterInput{
+    width: 100px;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid;
+    margin: 0px 5px;
+    border-radius: 3px;
+    transition: all .3s;
+}

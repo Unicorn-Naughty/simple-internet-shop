@@ -1,10 +1,11 @@
+import { Box, Button, Input, TextField } from "@mui/material";
 import { useRef, useEffect } from "react";
+import "./counter.css";
 function Counter({ min = 1, cnt: current, max, onChange }) {
   let inp = useRef();
 
   function applyCurrent(num) {
     let validNum = Math.max(min, Math.min(max, num));
-
 
     onChange(validNum);
   }
@@ -25,17 +26,22 @@ function Counter({ min = 1, cnt: current, max, onChange }) {
   }, [current]);
 
   return (
-    <div>
-      <button onClick={incr}>+</button>
+    <Box>
+      <Button color="primary" size="small" variant="contained" onClick={incr}>
+        +
+      </Button>
       <input
+        className="counterInput"
         ref={inp}
         defaultValue={current}
         onBlur={parseCurrentStr}
         onKeyPress={onKeyPress}
         type="text"
       />
-      <button onClick={descr}>-</button>
-    </div>
+      <Button color="primary" size="small" variant="contained" onClick={descr}>
+        -
+      </Button>
+    </Box>
   );
 }
 export default Counter;

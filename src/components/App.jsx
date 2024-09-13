@@ -1,19 +1,16 @@
 import { useRoutes } from "react-router-dom";
 import routes from "../router";
-import Navbar from "./Navbar";
+import "./index.css";
 import useStore from "../hooks/useStore";
-import {
-  Container,
-  FormControlLabel,
-  FormGroup,
-  useColorScheme,
-} from "@mui/material";
-import MaterialUISwitch from "./Switcher";
-import ButtonAppBar from "./ButtonAppBar";
+import { Box, Container, useColorScheme } from "@mui/material";
 
+import ButtonAppBar from "./ButtonAppBar";
+import BasicBreadcrumbs from "./BreadCrumbs";
+import Footer from "./Footer";
+import { observer } from "mobx-react-lite";
 function App() {
   const { mode, setMode } = useColorScheme();
-  
+
   // const [isDataLoading, setIsDataLoading] = useState(false);
   // async function getDataFromBackend() {
   //   //set the state isDataLoading = true before making the network call
@@ -30,7 +27,8 @@ function App() {
   // }, []);
 
   const view = useRoutes(routes);
-  const { page } = useStore();
+  const { page, cart } = useStore();
+
   page.update("Remarket");
   if (!mode) {
     null;
@@ -39,12 +37,24 @@ function App() {
   //   <Loader />
   // ) : (
   return (
-    <div className="">
-      <ButtonAppBar mode={mode} setMode={setMode} />
-      <hr />
-      <Container maxWidth="xl">{view}</Container>
-    </div>
+    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <Box className="hidden" component={"header"} mb={"25px"}>
+        <ButtonAppBar mode={mode} setMode={setMode} cart={cart} />
+      </Box>
+      <Container
+        className="hidden"
+        component={"main"}
+        maxWidth="xl"
+        sx={{ flexGrow: 1 }}
+      >
+        <BasicBreadcrumbs />
+        {view}
+      </Container>
+      <Box mt={"125px"} component={"footer"}>
+        <Footer />
+      </Box>
+    </Box>
   );
 }
 
-export default App;
+export default observer(App);

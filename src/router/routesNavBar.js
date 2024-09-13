@@ -11,9 +11,5 @@ const pagesArr = [
     name: "About",
     path: "/about",
   },
-  {
-    name: "Cart",
-    path: "/cart",
-  },
 ];
 export default pagesArr;

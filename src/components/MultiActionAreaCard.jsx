@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink} from "react-router-dom";
 import { Link } from "@mui/material";
 
 export default function MultiActionAreaCard({ product }) {
@@ -20,7 +20,7 @@ export default function MultiActionAreaCard({ product }) {
           <CardMedia
             component="img"
             height="140"
-            src="http://dummyimage.com/120"
+            src="http://dummyimage.com/400"
             alt="api product photo"
           />
           <CardContent>
@@ -39,9 +39,13 @@ export default function MultiActionAreaCard({ product }) {
         </Link>
       </CardActionArea>
       <CardActions>
-        <Link component={RouterLink} to={`/catalog/${product.id}`}>
-          Read More
-        </Link>
+        <Button
+          sx={{ display: "block", width: "100%" }}
+          component={RouterLink}
+          to={`/catalog/${product.id}`}
+        >
+          Buy
+        </Button>
       </CardActions>
     </Card>
   );

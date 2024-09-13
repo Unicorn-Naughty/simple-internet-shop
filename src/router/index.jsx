@@ -40,5 +40,9 @@ const routes = [
     path: "/catalog/:id",
     Component: obsProductItem,
   },
+  {
+    path: "/:id",
+    Component: obsProductItem,
+  },
 ];
 export default routes;

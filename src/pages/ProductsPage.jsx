@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import { Box } from "@mui/material";
+
 import MultiActionAreaCard from "../components/MultiActionAreaCard";
+
 function ProductsPage() {
   const { catalog } = useStore();
 
@@ -20,16 +22,19 @@ function ProductsPage() {
 
   return (
     <div>
-      <h1>Catalog</h1>
-      <hr />
-      <div>
+      <Box mb={"25px"}>
+        <h1>Catalog</h1>
         <SearchBar
           filterText={filterText}
           handleFilterChange={handleFilterChange}
         />
-        <Box>
+      </Box>
+      <div>
+        <Box display={"flex"} gap={"30px"} flexWrap={"wrap"}>
           {filtredProducts.map((pr) => (
-            <MultiActionAreaCard key={pr.id} product={pr} />
+            <Box key={pr.id}>
+              <MultiActionAreaCard product={pr} />
+            </Box>
           ))}
         </Box>
       </div>

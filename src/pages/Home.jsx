@@ -2,7 +2,7 @@ import ExampleCarousel from "../components/Carusel";
 function Home() {
   return (
     <div>
-      Its Home Page
+       <h1>Home page</h1>
       <ExampleCarousel />
     </div>
   );
