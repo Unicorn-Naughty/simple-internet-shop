@@ -1,21 +1,29 @@
-simple-internet-shop
+# simple-internet-shop
+Простое приложение интернет магазина
 
-Простое приложение интернет магазина.
+# Stack
 
-Stack
-Vite - сборщик
-React-TS
-Redux-react/RTK - управление состоянием
-MU/UI - стилизация
-Установка
-Клонирование репозитория
-git clone https://github.com/Unicorn-Naughty/simpleTodoList.git
+  1. Vite - сборщик
+  2. React-TS 
+  3. Redux-react/RTK - управление состоянием
+  4. Emotions - стилизация
+  5. Fetch - работа с апи
 
-Переход в директорию simple-internet-shop
-cd simple-internet-shop
+<!--Установка-->
+## Установка 
 
-Установка зависимостей
-npm install 
+1. Клонирование репозитория 
 
-Запуск для демонстрации возможностейsimple-internet-shop
-npm run dev
+```git clone https://github.com/Unicorn-Naughty/WeatherApp.git```
+
+2. Переход в директорию WeatherApp
+
+```cd simple-internet-shop```
+
+3. Установка зависимостей
+
+```npm install```
+
+6. Запуск для демонстрации возможностей WeatherApp
+
+```npm run dev```
