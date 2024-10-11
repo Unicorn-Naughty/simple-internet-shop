@@ -14,7 +14,7 @@
 
 1. Клонирование репозитория 
 
-```git clone https://github.com/Unicorn-Naughty/WeatherApp.git```
+```git clone https://github.com/Unicorn-Naughty/simple-internet-shop.git```
 
 2. Переход в директорию WeatherApp
 
