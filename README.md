@@ -1,8 +1,21 @@
-# React + Vite
+simple-internet-shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Простое приложение интернет магазина.
 
-Currently, two official plugins are available:
+Stack
+Vite - сборщик
+React-TS
+Redux-react/RTK - управление состоянием
+MU/UI - стилизация
+Установка
+Клонирование репозитория
+git clone https://github.com/Unicorn-Naughty/simpleTodoList.git
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Переход в директорию simple-internet-shop
+cd simple-internet-shop
+
+Установка зависимостей
+npm install 
+
+Запуск для демонстрации возможностейsimple-internet-shop
+npm run dev
